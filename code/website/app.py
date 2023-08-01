@@ -10,35 +10,48 @@ with open(model_filename, 'rb') as file:
 def main():
     st.title('Heart Disease Prediction')
     age = st.slider('Age', 18, 100, 50)
-    sex = st.selectbox('Sex', ['Male', 'Female'])
-    sex_num = 1 if sex == 'male' else 0 
-    cp = st.slider('Chest Pain Type', 0, 3, 1)
+    sex_options = ['Male', 'Female']
+    sex = st.selectbox('Sex', sex_options)
+    sex_num = 1 if sex == 'Male' else 0 
+    cp_options = ['Typical Angina', 'Atypical Angina', 'Non-anginal Pain', 'Asymptomatic']
+    cp = st.selectbox('Chest Pain Type', cp_options)
+    cp_num = cp_options.index(cp)
     trestbps = st.slider('Resting Blood Pressure', 90, 200, 120)
     chol = st.slider('Cholesterol', 100, 600, 250)
-    fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', [0, 1])
-    restecg = st.selectbox('Resting Electrocardiographic Results', [0, 1, 2])
+    fbs_options = ['False', 'True']
+    fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', fbs_options)
+    fbs_num = fbs_options.index(fbs)
+    restecg_options = ['Normal', 'ST-T Abnormality', 'Left Ventricular Hypertrophy']
+    restecg = st.selectbox('Resting Electrocardiographic Results', restecg_options)
+    restecg_num = restecg_options.index(restecg)
     thalach = st.slider('Maximum Heart Rate Achieved', 70, 220, 150)
-    exang = st.selectbox('Exercise Induced Angina', [0, 1])
+    exang_options = ['No', 'Yes']
+    exang = st.selectbox('Exercise Induced Angina', exang_options)
+    exang_num = exang_options.index(exang)
     oldpeak = st.slider('ST Depression Induced by Exercise Relative to Rest', 0.0, 6.2, 1.0)
-    slope = st.slider('Slope of the Peak Exercise ST Segment', 0, 2, 1)
+    slope_options = ['Upsloping', 'Flat', 'Downsloping']
+    slope = st.selectbox('Slope of the Peak Exercise ST Segment', slope_options)
+    slope_num = slope_options.index(slope)
     ca = st.slider('Number of Major Vessels Colored by Fluoroscopy', 0, 4, 1)
-    thal = st.slider('Thalassemia', 0, 3, 1)
+    thal_options = ['Normal', 'Fixed Defect', 'Reversible Defect']
+    thal = st.selectbox('Thalassemia', thal_options)
+    thal_num = thal_options.index(thal)
 
     if st.button('Predict'):
         user_input = pd.DataFrame(data={
             'age': [age],
             'sex': [sex_num],  
-            'cp': [cp],
+            'cp': [cp_num],
             'trestbps': [trestbps],
             'chol': [chol],
-            'fbs': [fbs],
-            'restecg': [restecg],
+            'fbs': [fbs_num],
+            'restecg': [restecg_num],
             'thalach': [thalach],
-            'exang': [exang],
+            'exang': [exang_num],
             'oldpeak': [oldpeak],
-            'slope': [slope],
+            'slope': [slope_num],
             'ca': [ca],
-            'thal': [thal]
+            'thal': [thal_num]
         })
         prediction = model.predict(user_input)
         st.write(f"Prediction: {'Positive' if prediction[0] == 1 else 'Negative'}")
