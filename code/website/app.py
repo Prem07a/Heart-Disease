@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-model_filename = '../../model/model.pkl'
+model_filename = './model/model.pkl'
 
 with open(model_filename, 'rb') as file:
     model = pickle.load(file)
