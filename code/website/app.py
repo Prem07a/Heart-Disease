@@ -10,7 +10,8 @@ with open(model_filename, 'rb') as file:
 def main():
     st.title('Heart Disease Prediction')
     age = st.slider('Age', 18, 100, 50)
-    sex = st.selectbox('Sex', [0, 1])
+    sex = st.selectbox('Sex', ['Male', 'Female'])
+    sex_num = 1 if sex == 'male' else 0 
     cp = st.slider('Chest Pain Type', 0, 3, 1)
     trestbps = st.slider('Resting Blood Pressure', 90, 200, 120)
     chol = st.slider('Cholesterol', 100, 600, 250)
@@ -26,7 +27,7 @@ def main():
     if st.button('Predict'):
         user_input = pd.DataFrame(data={
             'age': [age],
-            'sex': [sex],
+            'sex': [sex_num],  
             'cp': [cp],
             'trestbps': [trestbps],
             'chol': [chol],
