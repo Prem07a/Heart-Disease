@@ -54,10 +54,16 @@ def main():
             'thal': [thal_num]
         })
         prediction = model.predict(user_input)
-        prediction_text = 'Positive' if prediction[0] == 1 else 'Negative'
-        bg_color = 'red' if prediction[0] == 1 else 'green'
+        prediction_proba = model.predict_proba(user_input)
+
+        if prediction[0] == 1:
+            bg_color = 'red'
+        else:
+            bg_color = 'green'
         
-        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_text}</p>", unsafe_allow_html=True)
+        confidence = prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0]
+
+        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_text}<br>Confidence: {confidence:.2f}</p>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
