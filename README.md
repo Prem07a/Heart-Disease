@@ -78,10 +78,4 @@ The following input features can be adjusted in the app:
 
 After adjusting the input features and clicking "Predict," the app will display the predicted outcome, indicating whether the prediction suggests a positive or negative likelihood of heart disease.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
-
-Feel free to customize this `README.md` file further to include additional details about your project, its purpose, and any other relevant information. Make sure to replace placeholders like `your-username` with your actual GitHub username and adjust the folder structure if needed.
