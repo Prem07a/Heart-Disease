@@ -37,6 +37,8 @@ def main():
     thal = st.selectbox('Thalassemia', thal_options)
     thal_num = thal_options.index(thal)
 
+
+
     if st.button('Predict'):
         user_input = pd.DataFrame(data={
             'age': [age],
@@ -58,12 +60,14 @@ def main():
 
         if prediction[0] == 1:
             bg_color = 'red'
+            prediction_result = 'Positive'
         else:
             bg_color = 'green'
+            prediction_result = 'Negative'
         
         confidence = prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0]
 
-        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_text}<br>Confidence: {confidence:.2f}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_result}<br>Confidence: {confidence:.2f}</p>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
