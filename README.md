@@ -17,7 +17,6 @@ This is a simple Streamlit web application that allows users to predict the like
 - [Usage](#usage)
 - [Input Features](#input-features)
 - [Output](#output)
-- [License](#license)
 
 ## Getting Started
 
