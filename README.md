@@ -46,7 +46,7 @@ cd Project
 3. Install the required dependencies:
 
 ```bash
-pip install streamlit pandas
+pip pip install -r requirements.txt
 ```
 
 ## Usage
