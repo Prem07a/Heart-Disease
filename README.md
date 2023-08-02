@@ -5,6 +5,10 @@
 
 This is a simple Streamlit web application that allows users to predict the likelihood of heart disease based on input features. The prediction is made using a machine learning model that has been trained on heart disease data.
 
+![dog and cat image](data/image/hd.jpg)
+
+[Live Website](https://heart-disease-check.streamlit.app/)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
