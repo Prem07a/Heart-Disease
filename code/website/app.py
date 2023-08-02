@@ -54,7 +54,10 @@ def main():
             'thal': [thal_num]
         })
         prediction = model.predict(user_input)
-        st.write(f"Prediction: {'Positive' if prediction[0] == 1 else 'Negative'}")
+        prediction_text = 'Positive' if prediction[0] == 1 else 'Negative'
+        bg_color = 'red' if prediction[0] == 1 else 'green'
+        
+        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_text}</p>", unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()
