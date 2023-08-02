@@ -31,13 +31,13 @@ To run this application, you need:
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/your-username/heart-disease-prediction-app.git
+git clone https://github.com/Prem07a/Project.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd heart-disease-prediction-app
+cd Project
 ```
 
 3. Install the required dependencies:
@@ -51,7 +51,7 @@ pip install streamlit pandas
 Run the Streamlit app by executing the following command in your terminal:
 
 ```bash
-streamlit run app.py
+streamlit run ./code/website/app.py
 ```
 
 The web application will open in your default web browser. You can then interact with the app by inputting various features and clicking the "Predict" button to get the predicted outcome.
