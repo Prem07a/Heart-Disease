@@ -8,7 +8,7 @@ with open(model_filename, 'rb') as file:
     model = pickle.load(file)
 
 def main():
-    st.title('Heart Disease Prediction')
+    st.title('Heart Disease Risk Prediction')
     age = st.slider('Age', 18, 100, 50)
     sex_options = ['Male', 'Female']
     sex = st.selectbox('Sex', sex_options)
