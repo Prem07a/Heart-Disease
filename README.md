@@ -17,8 +17,8 @@ Nurshakirah Binti Osman
 
 ### **Business Success Criteria**
 Provide a prediction model to detect probability of heart disease for high risk individuals based on risk factors selection for the following sectors:
->   * Electronic Healthcare Records
->   * Personal Health Monitoring Systems
+> Electronic Healthcare Records
+> Personal Health Monitoring Systems
 
 
 >>This data set dates from 1988 and consists of four databases: 
