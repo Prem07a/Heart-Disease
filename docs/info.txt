@@ -1,4 +1,25 @@
-Context
+# Group 17 - Heart Disease Risk Prediction 
+Nithiakuhan Uthayakumar [22098068]
+Hovinyaa Selvaraju [S2177359]
+Alvin Ryan [22118579]
+Aysswarya Saravanan [17105950]
+Nurshakirah Bte Osman [23050210]
+
+# **Business Understanding**
+
+### **Background**
+* Ischaemic heart disease is the term given to heart problems caused by narrowed heart (coronary) arteries that supply blood to the heart muscle.
+* In 2022, 16.1% (20,322) of all medically certified deaths in Malaysia were caused by ischaemic heart disease.
+* Primary cause of death for the 3 major races in Malaysia. Indians (21.1%), Malays (17.3%) and Chinese (14.7%).
+
+### **Business Objective**
+* Perform an in-depth analysis of ischaemic heart disease key risk factors to develop a prediction model for the purpose of early detection and diagnosis.
+
+### **Business Success Criteria**
+Provide a prediction model to detect probability of heart disease for high risk individuals based on risk factors selection for the following sectors:
+>   * Electronic Healthcare Records
+>   * Personal Health Monitoring Systems
+
 
 >>This data set dates from 1988 and consists of four databases: 
 >Cleveland, 
@@ -11,7 +32,6 @@ but all published experiments refer to using a subset of 14 of them.
 The "target" field refers to the presence of heart disease in the patient. 
 It is integer valued 0 = no disease and 1 = disease.
 
-Content
 Attribute Information:
 
 01. age
@@ -28,7 +48,3 @@ Attribute Information:
 12. number of major vessels (0-3) colored by flourosopy
 13. thal: 0 = normal; 1 = fixed defect; 2 = reversable defect
 
->> The names and social security numbers of the patients were recently removed from the database, 
-replaced with dummy values.
-
-dataset_link = https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
