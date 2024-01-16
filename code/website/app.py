@@ -2,15 +2,15 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-model_filename = './model/model.pkl'
+model_filename = '/workspaces/Heart-Disease/model/model.pkl'
 
 with open(model_filename, 'rb') as file:
     model = pickle.load(file)
 
 def main():
-    st.title('Heart Disease Prediction')
+    st.title('WQD 7003 Group 17 - Heart Disease Risk Prediction')
     age = st.slider('Age', 18, 100, 50)
-    sex_options = ['Male', 'Female']
+    sex_options = ["Male", "Female"]
     sex = st.selectbox('Sex', sex_options)
     sex_num = 1 if sex == 'Male' else 0 
     cp_options = ['Typical Angina', 'Atypical Angina', 'Non-anginal Pain', 'Asymptomatic']
@@ -18,7 +18,7 @@ def main():
     cp_num = cp_options.index(cp)
     trestbps = st.slider('Resting Blood Pressure', 90, 200, 120)
     chol = st.slider('Cholesterol', 100, 600, 250)
-    fbs_options = ['False', 'True']
+    fbs_options = ["Yes", "No"]
     fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', fbs_options)
     fbs_num = fbs_options.index(fbs)
     restecg_options = ['Normal', 'ST-T Abnormality', 'Left Ventricular Hypertrophy']
@@ -37,8 +37,6 @@ def main():
     thal = st.selectbox('Thalassemia', thal_options)
     thal_num = thal_options.index(thal)
 
-
-
     if st.button('Predict'):
         user_input = pd.DataFrame(data={
             'age': [age],
@@ -52,22 +50,28 @@ def main():
             'exang': [exang_num],
             'oldpeak': [oldpeak],
             'slope': [slope_num],
-            'ca': [ca],
-            'thal': [thal_num]
+            'ca': [ca],  
+            'thal_num': [thal_num],  
         })
+        
         prediction = model.predict(user_input)
         prediction_proba = model.predict_proba(user_input)
 
         if prediction[0] == 1:
             bg_color = 'red'
-            prediction_result = 'Positive'
+            prediction_result = 'Oh no, get an appointment with a heart specialist soon to keep living. Unfortunately, you have a high risk of getting heart disease!'
         else:
             bg_color = 'green'
-            prediction_result = 'Negative'
+            prediction_result = 'Congratulations, keep up the good work in maintaining a healthy heart. You have a low risk of getting heart disease ;)'
         
         confidence = prediction_proba[0][1] if prediction[0] == 1 else prediction_proba[0][0]
 
-        st.markdown(f"<p style='background-color:{bg_color}; color:white; padding:10px;'>Prediction: {prediction_result}<br>Confidence: {((confidence*10000)//1)/100}%</p>", unsafe_allow_html=True)
+        result_message = f"<h5>Prediction:</h5> <h1 style='font-weight:bold;'>{prediction_result}</h1> <h5>Confidence:</h5> <h2>{((confidence*10000)//1)/100}%</h2>"
+
+        st.markdown(
+            f"<p style='background-color:{bg_color}; color:white; padding:10px;'>{result_message}</p>", 
+                unsafe_allow_html=True
+        )
 
 if __name__ == '__main__':
     main()
