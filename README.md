@@ -1,84 +1,50 @@
+# Group 17 - Heart Disease Risk Prediction 
+Nithiakuhan Uthayakumar 
+Hovinyaa Selvaraju 
+Alvin Ryan 
+Aysswarya Saravanan 
+Nurshakirah Binti Osman 
 
----
+# **Business Understanding**
 
-# Heart Disease Prediction Streamlit App
+### **Background**
+* Ischaemic heart disease is the term given to heart problems caused by narrowed heart (coronary) arteries that supply blood to the heart muscle.
+* In 2022, 16.1% (20,322) of all medically certified deaths in Malaysia were caused by ischaemic heart disease.
+* Primary cause of death for the 3 major races in Malaysia. Indians (21.1%), Malays (17.3%) and Chinese (14.7%).
 
-This is a simple Streamlit web application that allows users to predict the likelihood of heart disease based on input features. The prediction is made using a machine learning model that has been trained on heart disease data.
+### **Business Objective**
+* Perform an in-depth analysis of ischaemic heart disease key risk factors to develop a prediction model for the purpose of early detection and diagnosis.
 
-![dog and cat image](data/image/hd.png)
+### **Business Success Criteria**
+Provide a prediction model to detect probability of heart disease for high risk individuals based on risk factors selection for the following sectors:
+>   * Electronic Healthcare Records
+>   * Personal Health Monitoring Systems
 
-[Live Website](https://heart-disease-checking.streamlit.app/)
 
-## Table of Contents
+>>This data set dates from 1988 and consists of four databases: 
+>Cleveland, 
+>Hungary, 
+>Switzerland, 
+>Long Beach V. 
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Input Features](#input-features)
-- [Output](#output)
+>>It contains 76 attributes, including the predicted attribute, 
+but all published experiments refer to using a subset of 14 of them. 
+The "target" field refers to the presence of heart disease in the patient. 
+It is integer valued 0 = no disease and 1 = disease.
 
-## Getting Started
+Attribute Information:
 
-### Prerequisites
+01. age
+02. sex
+03. chest pain type (4 values)
+04. resting blood pressure
+05. serum cholestoral in mg/dl
+06. fasting blood sugar > 120 mg/dl
+07. resting electrocardiographic results (values 0,1,2)
+08. maximum heart rate achieved
+09. exercise induced angina
+10. oldpeak = ST depression induced by exercise relative to rest
+11. the slope of the peak exercise ST segment
+12. number of major vessels (0-3) colored by flourosopy
+13. thal: 0 = normal; 1 = fixed defect; 2 = reversable defect
 
-To run this application, you need:
-
-- Python (3.6 or later)
-- Streamlit
-- pandas
-- pickle
-
-### Installation
-
-1. Clone this repository:
-
-```bash
-git clone https://github.com/Prem07a/Project.git
-```
-
-2. Navigate to the project directory:
-
-```bash
-cd Project
-```
-
-3. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-Run the Streamlit app by executing the following command in your terminal:
-
-```bash
-streamlit run ./code/website/app.py
-```
-
-The web application will open in your default web browser. You can then interact with the app by inputting various features and clicking the "Predict" button to get the predicted outcome.
-
-## Input Features
-
-The following input features can be adjusted in the app:
-
-- Age
-- Sex (Male/Female)
-- Chest Pain Type
-- Resting Blood Pressure
-- Cholesterol
-- Fasting Blood Sugar (> 120 mg/dl)
-- Resting Electrocardiographic Results
-- Maximum Heart Rate Achieved
-- Exercise Induced Angina
-- ST Depression Induced by Exercise Relative to Rest
-- Slope of the Peak Exercise ST Segment
-- Number of Major Vessels Colored by Fluoroscopy
-- Thalassemia
-
-## Output
-
-After adjusting the input features and clicking "Predict," the app will display the predicted outcome, indicating whether the prediction suggests a positive or negative likelihood of heart disease.
-
----
