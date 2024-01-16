@@ -1,9 +1,5 @@
 # Group 17 - Heart Disease Risk Prediction 
-Nithiakuhan Uthayakumar 
-Hovinyaa Selvaraju 
-Alvin Ryan 
-Aysswarya Saravanan 
-Nurshakirah Binti Osman 
+Nithiakuhan Uthayakumar | Hovinyaa Selvaraju | Alvin Ryan | Aysswarya Saravanan | Nurshakirah Binti Osman 
 
 # **Business Understanding**
 
