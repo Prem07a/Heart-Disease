@@ -37,6 +37,8 @@ def main():
     thal = st.selectbox('Thalassemia', thal_options)
     thal_num = thal_options.index(thal)
 
+    with open('model/mean_std_values.pkl', 'rb') as f:
+        mean_std_values = pickle.load(f)
 
 
     if st.button('Predict'):
@@ -55,6 +57,8 @@ def main():
             'ca': [ca],
             'thal': [thal_num]
         })
+        # Apply saved transformation to new data
+        user_input = (user_input - mean_std_values['mean']) / mean_std_values['std']
         prediction = model.predict(user_input)
         prediction_proba = model.predict_proba(user_input)
 
