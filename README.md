@@ -34,13 +34,13 @@ To run this application, you need:
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/Prem07a/Project.git
+git clone https://github.com/Prem07a/Heart-Disease.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd Project
+cd Heart-Disease
 ```
 
 3. Install the required dependencies:
