@@ -81,4 +81,8 @@ The following input features can be adjusted in the app:
 
 After adjusting the input features and clicking "Predict," the app will display the predicted outcome, indicating whether the prediction suggests a positive or negative likelihood of heart disease.
 
+## Thanks
+
+I would like to thank <a href = "https://github.com/Akshat-Projects">Akshat</a> for reporting a bug in streamlit app.
+
 ---
